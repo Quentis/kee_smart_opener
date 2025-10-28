@@ -1,3 +1,13 @@
+# Silicon Labs
+firmware/.projectlinkstore
+firmware/.vscode/c_cpp_properties.json
+firmware/autogen
+firmware/cmake_gcc/kee_smart_opener.cmake
+firmware/cmake_gcc/kee_smart_opener_project.cmake
+firmware/cmake_gcc/build
+firmware/config/rail/slc_args.json
+firmware/simplicity_sdk_2025.6.2
+
 # Prerequisites
 *.d
 
