@@ -1,6 +1,6 @@
 /***************************************************************************//**
  * @file
- * @brief Memory Heap and stack size configuration file.
+ * @brief Memory Heap Allocator configuration file.
  *******************************************************************************
  * # License
  * <b>Copyright 2024 Silicon Laboratories Inc. www.silabs.com</b>
@@ -30,22 +30,25 @@
 
 // <<< Use Configuration Wizard in Context Menu >>>
 
-#ifndef SL_MEMORY_MANAGER_REGION_CONFIG_H
-#define SL_MEMORY_MANAGER_REGION_CONFIG_H
+#ifndef SL_MEMORY_MANAGER_CONFIG_H
+#define SL_MEMORY_MANAGER_CONFIG_H
 
-#include "sl_component_catalog.h"
+// <h> Memory Manager Configuration
 
-// <h> Memory configuration
+// <o SL_MEMORY_MANAGER_BLOCK_ALLOCATION_MIN_SIZE> Minimum block allocation size
+// <32-128:8>
+// <i> Minimum block allocation size to avoid creating a block too small while splitting up an allocated block.
+// <i> Size expressed in bytes and can only be a multiple of 8 bytes for the proper data alignment management done by the dynamic allocator malloc() function.
+// <i> Default: 32
+#define SL_MEMORY_MANAGER_BLOCK_ALLOCATION_MIN_SIZE   (32)
 
-// <o SL_STACK_SIZE> Stack size for the application.
-// <i> Default: 4096
-// <i> The stack size configured here will be used by the stack that the
-// <i> application uses when coming out of a reset.
-#ifndef SL_STACK_SIZE
-#define SL_STACK_SIZE 4096
-#endif
+// <q SL_MEMORY_MANAGER_STATISTICS_API_ENABLE> Enables the statistics API.
+// <i> Setting this configuration to 0 will make all the statistics API return 0.
+// <i> Default: 1
+#define SL_MEMORY_MANAGER_STATISTICS_API_ENABLE  1
+
 // </h>
 
 // <<< end of configuration section >>>
 
-#endif /* SL_MEMORY_MANAGER_REGION_CONFIG_H */
+#endif /* SL_MEMORY_MANAGER_CONFIG_H */

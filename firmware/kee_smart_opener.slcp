@@ -29,18 +29,25 @@ toolchain_settings:
 - {value: debug, option: optimize}
 component:
 - {id: EFR32FG23B010F512IM48}
+- {id: app_assert}
+- {id: app_button_press}
+- {id: app_log}
 - {id: board_control}
 - {id: brd4002a}
 - {id: brd4265b}
 - {id: clock_manager}
 - {id: code_classification}
 - {id: device_init}
+- {id: dmadrv}
+- {id: hal_timer}
+- {id: iostream_rtt}
 - {id: mpu}
 - {id: radio_config_simple_rail_singlephy}
 - {id: rail_util_pa}
 - {id: sl_main}
 - instance: [inst0]
   id: sl_rail_util_init
+- {id: sleeptimer}
 requires:
 - {name: a_radio_config}
 configuration:

@@ -1,0 +1,10 @@
+{
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/cmake_gcc/build/compile_commands.json",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c"
+    },
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.errorSquiggles": "enabled"
+}

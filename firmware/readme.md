@@ -75,3 +75,26 @@ radio operation (packet transmission and reception) it is advised to create
 You are always encouraged and welcome to report any issues you found to us via
 [Silicon Labs
 Community](https://community.silabs.com/s/topic/0TO1M000000qHaKWAU/proprietary?language=en_US).
+
+## Startup
+
+HFXO Startup Time: 178us
+
+Reference: EFR32FG23 Wireless SoC Family Data Sheet
+
+
+## Retrospective
+
+I found these functional, non-functional, DX issues during development.
+
+Some components requires power_manager component. I suppose because power manager provides some types for baremetal.
+This is problematic because you may have a project which requires no power management then adding e.g. button press component the whole project starts to use power management however button press doesn't really need power manager for its functionality. This power management requirement is even more unnecessary for RTOS project in some cases because is_ok_to_sleep isn't needed in RTOS projects.
+
+Missing comma in macro definition in app_log:
+// ARRAY DUMP
+#define app_log_array_dump_level(level, p_data, len, format) \
+  app_log_array_dump_level_s(level,                          \
+                             APP_LOG_ARRAY_DUMP_SEPARATOR    \
+                             p_data,                         \
+                             len,                            \
+                             format)

@@ -1,9 +1,9 @@
 /***************************************************************************//**
  * @file
- * @brief Memory Heap and stack size configuration file.
+ * @brief RAIL power manager configuration file.
  *******************************************************************************
  * # License
- * <b>Copyright 2024 Silicon Laboratories Inc. www.silabs.com</b>
+ * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
  *******************************************************************************
  *
  * SPDX-License-Identifier: Zlib
@@ -28,24 +28,17 @@
  *
  ******************************************************************************/
 
+#ifndef SL_RAIL_UTIL_POWER_MANAGER_INIT_CONFIG_H
+#define SL_RAIL_UTIL_POWER_MANAGER_INIT_CONFIG_H
+
 // <<< Use Configuration Wizard in Context Menu >>>
 
-#ifndef SL_MEMORY_MANAGER_REGION_CONFIG_H
-#define SL_MEMORY_MANAGER_REGION_CONFIG_H
+// <h> RAIL power manager configuration
 
-#include "sl_component_catalog.h"
+// <o SL_RAIL_UTIL_RAIL_POWER_MANAGER_INIT> Enable RAIL power manager initialization
+// <i> Default: 1
+#define SL_RAIL_UTIL_RAIL_POWER_MANAGER_INIT 1
 
-// <h> Memory configuration
-
-// <o SL_STACK_SIZE> Stack size for the application.
-// <i> Default: 4096
-// <i> The stack size configured here will be used by the stack that the
-// <i> application uses when coming out of a reset.
-#ifndef SL_STACK_SIZE
-#define SL_STACK_SIZE 4096
-#endif
 // </h>
-
 // <<< end of configuration section >>>
-
-#endif /* SL_MEMORY_MANAGER_REGION_CONFIG_H */
+#endif // SL_RAIL_UTIL_POWER_MANAGER_INIT_CONFIG_H

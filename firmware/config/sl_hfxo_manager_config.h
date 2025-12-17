@@ -1,9 +1,9 @@
 /***************************************************************************//**
  * @file
- * @brief Memory Heap and stack size configuration file.
+ * @brief HFXO Manager configuration file.
  *******************************************************************************
  * # License
- * <b>Copyright 2024 Silicon Laboratories Inc. www.silabs.com</b>
+ * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
  *******************************************************************************
  *
  * SPDX-License-Identifier: Zlib
@@ -30,22 +30,27 @@
 
 // <<< Use Configuration Wizard in Context Menu >>>
 
-#ifndef SL_MEMORY_MANAGER_REGION_CONFIG_H
-#define SL_MEMORY_MANAGER_REGION_CONFIG_H
+#ifndef SL_HFXO_MANAGER_CONFIG_H
+#define SL_HFXO_MANAGER_CONFIG_H
 
-#include "sl_component_catalog.h"
+// <h>HFXO Manager Configuration
 
-// <h> Memory configuration
+// <q SL_HFXO_MANAGER_CUSTOM_HFXO_IRQ_HANDLER> Enable custom IRQ handler for crystal HF oscillator.
+// <i> Enable if HFXO0_IRQHandler is needed from your application.
+// <i> The HFXO IRQ priority must not be changed as the HFXO Manager module needs it to be high priority
+// <i> and to stay enabled through atomic sections.
+// <i> The function sl_hfxo_manager_irq_handler() will have to be called from you custom handler if this is enabled.
+// <i> Default: 0
+#define SL_HFXO_MANAGER_CUSTOM_HFXO_IRQ_HANDLER  0
 
-// <o SL_STACK_SIZE> Stack size for the application.
-// <i> Default: 4096
-// <i> The stack size configured here will be used by the stack that the
-// <i> application uses when coming out of a reset.
-#ifndef SL_STACK_SIZE
-#define SL_STACK_SIZE 4096
-#endif
+// <q SL_HFXO_MANAGER_SLEEPY_CRYSTAL_SUPPORT> Enable support for Sleepy Crystals.
+// <i> If Enabled and if HFXO fails to startup due to a sleepy crystal, HFXO Manager will retry the startup with more aggressive settings
+// <i> before falling back to the configured settings.
+// <i> Default: 0
+#define SL_HFXO_MANAGER_SLEEPY_CRYSTAL_SUPPORT  0
+
 // </h>
 
-// <<< end of configuration section >>>
+#endif /* SL_HFXO_MANAGER_CONFIG_H */
 
-#endif /* SL_MEMORY_MANAGER_REGION_CONFIG_H */
+// <<< end of configuration section >>>

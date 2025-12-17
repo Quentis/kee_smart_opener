@@ -86,7 +86,7 @@
 // <2048=>2048
 // <4096=>4096
 // <i> Default: 0
-#define SL_RAIL_UTIL_INIT_TX_FIFO_INST0_BYTES 0
+#define SL_RAIL_UTIL_INIT_TX_FIFO_INST0_BYTES 256
 // </h>
 // </h>
 
